@@ -1,15 +1,23 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:bazar_bookstore/features/auth/ui/loginScreen.dart';
+import 'package:bazar_bookstore/features/auth/ui/SignUpScreen.dart';
+import 'package:bazar_bookstore/features/auth/ui/SplashScreen.dart';
 
 Future<void> main() async {
+  //to ensure that flutter is ready before supabase initialization
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load .env variables
+  await dotenv.load(fileName: ".env");
+
   await Supabase.initialize(
-    url: 'https://ppxjlrvmirqtuusfddax.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBweGpscnZtaXJxdHV1c2ZkZGF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDgyNTUsImV4cCI6MjA3MjU4NDI1NX0.jjH6X79_VjxyI60s3Hx8oC_q8oNmxUSItxjJFRh5hSc',
+    url: dotenv.env['SUPABASE_API_URL']!,
+    anonKey: dotenv.env['API_ANON_KEY']!,
   );
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +26,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: );
-
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/splash",
+      routes: {
+        "/splash": (context) => SplashScreen(),
+        "/login": (context) => LoginScreen(),
+        "/signUp": (context) => SignUpScreen(),
+      },
+    );
   }
 }
