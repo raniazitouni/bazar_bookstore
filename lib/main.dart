@@ -1,3 +1,4 @@
+import 'package:bazar_bookstore/mainScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         "/splash": (context) => SplashScreen(),
         "/login": (context) => LoginScreen(),
         "/signUp": (context) => SignUpScreen(),
+        "/home": (context) => MainScreen(),
       },
     );
   }

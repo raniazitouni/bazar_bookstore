@@ -17,7 +17,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   void initState() {
     super.initState();
 
-     Future.microtask(() {
+    Future.microtask(() {
       final authState = ref.read(authControllerProvider);
 
       // check if the user is logged in or not
@@ -25,15 +25,15 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
         data: (session) {
           Future.delayed(const Duration(seconds: 2), () {
             if (session != null) {
-              Navigator.pushReplacementNamed(context, "/signUp");
+              Navigator.pushReplacementNamed(context, "/home");
             } else {
               Navigator.pushReplacementNamed(context, "/login");
             }
           });
         },
-        loading: () {
-        },
+        loading: () {},
         error: (err, _) {
+          ref.read(authControllerProvider.notifier).signOut();
           Navigator.pushReplacementNamed(context, "/login");
         },
       );
@@ -53,6 +53,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
           },
           loading: () {},
           error: (err, _) {
+            ref.read(authControllerProvider.notifier).signOut();
             Navigator.pushReplacementNamed(context, "/login");
           },
         );
