@@ -62,7 +62,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
               ),
             );
             // Navigate to home
-            // Navigator.pushReplacementNamed(context, "/home");
+            Navigator.pushReplacementNamed(context, "/home");
           }
         },
       );
@@ -168,6 +168,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                                           .signUp(
                                             _emailController.text.trim(),
                                             _passwordController.text.trim(),
+                                            _nameController.text.trim()
                                           );
                                     }
                                   },

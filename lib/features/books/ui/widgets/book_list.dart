@@ -15,14 +15,6 @@ class BookList extends ConsumerStatefulWidget {
 
 class _BookListState extends ConsumerState<BookList> {
   @override
-  void initState() {
-    super.initState();
-    Future.microtask(() {
-      ref.read(BookControllerProvider.notifier).getAllBooks();
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     final booksAsync = ref.watch(BookControllerProvider);
 
@@ -30,7 +22,7 @@ class _BookListState extends ConsumerState<BookList> {
       height: 300,
       child: booksAsync.when(
         data: (books) {
-          return books.isEmpty
+          return (books.isEmpty)
               ? const Padding(
                   padding: EdgeInsets.all(50),
                   child: Text(
@@ -49,7 +41,8 @@ class _BookListState extends ConsumerState<BookList> {
                     final book = books[index];
                     return BookItem(book: book);
                   },
-                  separatorBuilder: (context, index) => const SizedBox(width: 20),
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(width: 20),
                 );
         },
         error: (err, stack) => Center(child: Text("Error: ${err.toString()}")),

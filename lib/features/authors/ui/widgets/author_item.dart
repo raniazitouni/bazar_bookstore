@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:bazar_bookstore/features/authors/models/author_model.dart';
+import 'package:bazar_bookstore/features/authors/ui/AuthorCategoryScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_bookstore/core/theme/app_colors.dart';
 
@@ -38,7 +39,7 @@ class AuthorItem extends StatelessWidget {
           ),
           const SizedBox(height: 3),
           Text(
-            author.category,
+            authorCategoryLabel(author.category),
             style: const TextStyle(
               color: AppColors.gray500,
               fontSize: 14,

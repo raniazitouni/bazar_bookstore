@@ -50,13 +50,28 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             child: Column(
               children: [
                 //book list
-                ListHeader(title: "Top of Week", seeAll: () {}),
+                ListHeader(
+                  title: "Top of Week",
+                  seeAll: () {
+                    Navigator.pushNamed(context, "/books");
+                  },
+                ),
                 BookList(),
                 //vendors list
-                ListHeader(title: "Best Vendors", seeAll: () {}),
+                ListHeader(
+                  title: "Best Vendors",
+                  seeAll: () {
+                    Navigator.pushNamed(context, "/vendors");
+                  },
+                ),
                 VendorList(),
                 //authors list
-                ListHeader(title: "Authors", seeAll: () {}),
+                ListHeader(
+                  title: "Authors",
+                  seeAll: () {
+                    Navigator.pushNamed(context, "/authors");
+                  },
+                ),
                 AuthorList(),
               ],
             ),

@@ -61,7 +61,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               ),
             );
             // Navigate to home
-            // Navigator.pushReplacementNamed(context, "/home");
+            Navigator.pushReplacementNamed(context, "/home");
           }
         },
       );

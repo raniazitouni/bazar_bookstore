@@ -4,7 +4,7 @@ import 'package:bazar_bookstore/core/theme/app_colors.dart';
 import 'package:bazar_bookstore/features/vendors/controllers/vendors_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'vendor_item.dart';
+import 'vendor_logo.dart';
 
 class VendorList extends ConsumerStatefulWidget {
   const VendorList({super.key});

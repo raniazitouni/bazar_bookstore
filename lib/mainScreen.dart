@@ -1,3 +1,6 @@
+import 'package:bazar_bookstore/features/auth/ui/profileScreen.dart';
+import 'package:bazar_bookstore/features/books/ui/BookCategoryScreen.dart';
+import 'package:bazar_bookstore/features/whishlists/ui/wishlistScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:bazar_bookstore/features/books/ui/homeScreen.dart';
 import 'package:bazar_bookstore/core/theme/app_colors.dart';
@@ -15,9 +18,9 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = const [
     HomeScreen(),
-    Center(child: Text("Category")),
-    Center(child: Text("Wishlist")),
-    Center(child: Text("Profile")),
+    BookCategoryScreen(),
+    WishlistScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {

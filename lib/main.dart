@@ -1,3 +1,7 @@
+import 'package:bazar_bookstore/features/authors/ui/AuthorCategoryScreen.dart';
+import 'package:bazar_bookstore/features/books/ui/BookCategoryScreen.dart';
+import 'package:bazar_bookstore/features/vendors/ui/VendorCategoryScreen.dart';
+import 'package:bazar_bookstore/features/whishlists/ui/wishlistScreen.dart';
 import 'package:bazar_bookstore/mainScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -35,6 +39,10 @@ class MyApp extends StatelessWidget {
         "/login": (context) => LoginScreen(),
         "/signUp": (context) => SignUpScreen(),
         "/home": (context) => MainScreen(),
+        "/books": (context) => BookCategoryScreen(),
+        "/authors": (context) => AuthorCategoryScreen(),
+        "/vendors": (context) => VendorCategoryScreen(),
+        "/wishlist": (context) => WishlistScreen(),
       },
     );
   }
