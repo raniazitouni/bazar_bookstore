@@ -6,7 +6,7 @@ class AuthorRepository {
 
   Future<List<Author
   >> getAllAuthors() async {
-    try {
+    try { 
       final response = await supabase
           .from('authors')
           .select('fullname, picture_url, category');

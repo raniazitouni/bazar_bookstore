@@ -1,7 +1,6 @@
 import 'package:bazar_bookstore/features/books/controllers/book_controller.dart';
 import 'package:bazar_bookstore/features/books/models/book_model.dart';
 import 'package:bazar_bookstore/features/books/repository/book_repository.dart';
-import 'package:bazar_bookstore/features/books/ui/BookCategoryScreen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final bookRepositoryProvider = Provider<BookRepository>((ref) {

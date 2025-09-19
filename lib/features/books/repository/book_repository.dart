@@ -33,7 +33,8 @@ class BookRepository {
             description,
             vendors (
               id,
-              logo_url
+              logo_url,
+              category
             )
           ''')
           .eq('id', id)
@@ -45,8 +46,6 @@ class BookRepository {
           .eq('target_id', id)
           .eq('target_type', 'book')
           .maybeSingle();
-
-      print("here $reviewsResponse");
 
       if (bookResponse == null) return null;
 

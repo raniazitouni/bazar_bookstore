@@ -135,7 +135,7 @@ class _BookDetailsState extends ConsumerState<BookDetails> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        // the book title + like button 
+                        // the book title + like button
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -166,12 +166,12 @@ class _BookDetailsState extends ConsumerState<BookDetails> {
                             ),
                           ],
                         ),
-                        //the vendor logo 
+                        //the vendor logo
                         isVendor
                             ? VendorItem(vendor: book.vendor!)
                             : SizedBox.shrink(),
                         const SizedBox(height: 10),
-                        // the book description 
+                        // the book description
                         Text(
                           book.description,
                           style: const TextStyle(
@@ -181,7 +181,7 @@ class _BookDetailsState extends ConsumerState<BookDetails> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        // the book review 
+                        // the book review
                         Text(
                           "Review",
                           style: const TextStyle(
@@ -192,7 +192,7 @@ class _BookDetailsState extends ConsumerState<BookDetails> {
                         ),
                         const SizedBox(height: 5),
                         RatingBarIndicator(
-                          rating: 4 /*book.review?.rating.toDouble() ?? 0*/,
+                          rating: book.review?.rating.toDouble() ?? 0,
                           itemBuilder: (context, index) =>
                               const Icon(Icons.star, color: AppColors.yellow),
                           itemCount: 5,
@@ -200,7 +200,7 @@ class _BookDetailsState extends ConsumerState<BookDetails> {
                           direction: Axis.horizontal,
                         ),
                         const SizedBox(height: 10),
-                        // the book price 
+                        // the book price
                         Text(
                           "\$${book.price.toString()}",
                           style: const TextStyle(

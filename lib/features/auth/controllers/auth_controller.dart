@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:bazar_bookstore/features/auth/models/user_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:bazar_bookstore/features/auth/providers/auth_provider.dart';

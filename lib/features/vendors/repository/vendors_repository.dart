@@ -8,11 +8,20 @@ class VendorRepository {
     try {
       final response = await supabase
           .from('vendors')
-          .select('logo_url');
+          .select('id , title , logo_url , category ');
 
-      final vendors = (response as List<dynamic>).map((row) {
-        return Vendor.fromJson(row);
-      }).toList();
+      final vendors = await Future.wait(
+        (response as List<dynamic>).map((row) async {
+          final reviewsResponse = await supabase
+              .from('reviews')
+              .select('id, rating, target_type, target_id')
+              .eq('target_id', row['id'])
+              .eq('target_type', 'vendor')
+              .maybeSingle();
+
+          return Vendor.fromJson({...row, 'reviews': reviewsResponse});
+        }),
+      );
 
       return vendors;
     } catch (e) {

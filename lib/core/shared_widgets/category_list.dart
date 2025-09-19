@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:bazar_bookstore/core/theme/app_colors.dart';
 
-
 class GridList<T> extends ConsumerWidget {
   final AsyncValue<List<T>> items;
   final Widget Function(BuildContext, T) widgetItem;
   final String label;
   final double aspectRatio;
+  final int crossAxisCount;
 
   const GridList({
     super.key,
@@ -17,6 +17,7 @@ class GridList<T> extends ConsumerWidget {
     required this.widgetItem,
     required this.label,
     this.aspectRatio = 0.6,
+    this.crossAxisCount = 2,
   });
 
   @override
@@ -42,7 +43,7 @@ class GridList<T> extends ConsumerWidget {
           return GridView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+              crossAxisCount: crossAxisCount,
               crossAxisSpacing: 35,
               mainAxisSpacing: 5,
               childAspectRatio: aspectRatio,
