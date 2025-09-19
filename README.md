@@ -13,8 +13,7 @@ lib/
 │   ├── books/           # home , Book list, details , search
 │   ├── authors/         # Author list
 │   ├── vendors/         # Vendor list
-│   ├── wishlist/        # Wishlist screen
-│   └── profile/
+│   └──wishlist/        # Wishlist screen
 └── main.dart
 ```
 
