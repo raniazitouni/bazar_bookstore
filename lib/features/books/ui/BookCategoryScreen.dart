@@ -27,7 +27,7 @@ class _BookCategoryScreenState extends ConsumerState<BookCategoryScreen> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushNamed(context, "/home");
           },
           icon: SvgPicture.asset(
             'assets/icons/arrow_left.svg',

@@ -20,63 +20,68 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(
-            'assets/icons/search.svg',
-            width: 24,
-            height: 24,
+      body: CustomScrollView(
+        slivers: [
+          // appbar
+          SliverAppBar(
+            pinned: true,
+            backgroundColor: Colors.white,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/search");
+              },
+              icon: SvgPicture.asset(
+                'assets/icons/search.svg',
+                width: 24,
+                height: 24,
+              ),
+              highlightColor: Colors.grey.withOpacity(0.2),
+            ),
+            title: Text(
+              "Home",
+              style: TextStyle(
+                color: AppColors.gray900,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            centerTitle: true,
           ),
-          highlightColor: Colors.grey.withOpacity(0.2),
-        ),
-        title: Text(
-          "Home",
-          style: TextStyle(
-            color: AppColors.gray900,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-      ),
 
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 24),
-            color: Colors.white,
-            child: Column(
-              children: [
-                //book list
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                // Books
                 ListHeader(
                   title: "Top of Week",
                   seeAll: () {
                     Navigator.pushNamed(context, "/books");
                   },
                 ),
-                BookList(),
-                //vendors list
+                const BookList(),
+
+                // Vendors
                 ListHeader(
                   title: "Best Vendors",
                   seeAll: () {
                     Navigator.pushNamed(context, "/vendors");
                   },
                 ),
-                VendorList(),
-                //authors list
+                const VendorList(),
+
+                // Authors
                 ListHeader(
                   title: "Authors",
                   seeAll: () {
                     Navigator.pushNamed(context, "/authors");
                   },
                 ),
-                AuthorList(),
-              ],
+                const AuthorList(),
+              ]),
             ),
           ),
-        ),
+        ],
       ),
     );
   }

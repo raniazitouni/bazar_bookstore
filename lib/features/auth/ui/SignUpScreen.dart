@@ -73,7 +73,9 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, "/login");
+          },
           icon: SvgPicture.asset(
             'assets/icons/arrow_left.svg',
             width: 24,

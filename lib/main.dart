@@ -1,5 +1,7 @@
+import 'package:bazar_bookstore/features/auth/ui/forgetPasswordScreen.dart';
 import 'package:bazar_bookstore/features/authors/ui/AuthorCategoryScreen.dart';
 import 'package:bazar_bookstore/features/books/ui/BookCategoryScreen.dart';
+import 'package:bazar_bookstore/features/books/ui/searchScreen.dart';
 import 'package:bazar_bookstore/features/vendors/ui/VendorCategoryScreen.dart';
 import 'package:bazar_bookstore/features/whishlists/ui/wishlistScreen.dart';
 import 'package:bazar_bookstore/mainScreen.dart';
@@ -43,6 +45,8 @@ class MyApp extends StatelessWidget {
         "/authors": (context) => AuthorCategoryScreen(),
         "/vendors": (context) => VendorCategoryScreen(),
         "/wishlist": (context) => WishlistScreen(),
+        "/search": (context) => SearchScreen(),
+        "/forget-password": (context) => ForgotPasswordScreen(),
       },
     );
   }

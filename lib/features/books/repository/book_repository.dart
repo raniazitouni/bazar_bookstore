@@ -56,4 +56,19 @@ class BookRepository {
       throw Exception('Failed to fetch book with id $id: $e');
     }
   }
+
+  Future<List<Book>> searchBooks(String query) async {
+    if (query.isEmpty) return [];
+
+    try {
+      final response = await supabase
+          .from('books')
+          .select('id,title,price,cover_url,category,description')
+          .ilike('title', '%$query%');
+
+      return (response as List).map((row) => Book.fromJson(row)).toList();
+    } catch (e) {
+      throw Exception("Failed to search books: $e");
+    }
+  }
 }
