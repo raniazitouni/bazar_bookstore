@@ -22,6 +22,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     final searchController = ref.read(searchControllerProvider.notifier);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -34,6 +35,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           ),
           highlightColor: Colors.grey.withOpacity(0.2),
         ),
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

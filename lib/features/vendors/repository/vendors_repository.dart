@@ -25,7 +25,7 @@ class VendorRepository {
 
       return vendors;
     } catch (e) {
-      throw Exception('Failed to fetch books: $e');
+      throw Exception('Failed to fetch vendors: $e');
     }
   }
 }
