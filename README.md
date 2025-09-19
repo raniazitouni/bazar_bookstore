@@ -19,6 +19,33 @@ lib/
 
 ---
 
+## Database shema
+
+- **users**
+
+  - id, name, email, phone_number, picture_url
+
+- **books**
+
+  - id, title, cover_url, description, book_category, author_id, vendor_id, price
+
+- **author**
+
+  - id, fullname, author_category, picture_url, about
+
+- **vendors**
+
+  - id, title, logo_url, vendor_category
+
+- **wishlists**
+
+  - book_id, user_id
+
+- **reviews**
+  - id, user_id, target_id, target_type (enum: book, author, vendor), rating (1–5)
+
+---
+
 ## Features
 
 - **Authentication**
@@ -49,28 +76,3 @@ lib/
   - Logout button
 
 ---
-
-## Database shema
-
-- **users**
-
-  - id, name, email, phone_number, picture_url
-
-- **books**
-
-  - id, title, cover_url, description, book_category, author_id, vendor_id, price
-
-- **author**
-
-  - id, fullname, author_category, picture_url, about
-
-- **vendors**
-
-  - id, title, logo_url, vendor_category
-
-- **wishlists**
-
-  - book_id, user_id
-
-- **reviews**
-  - id, user_id, target_id, target_type (enum: book, author, vendor), rating (1–5)
