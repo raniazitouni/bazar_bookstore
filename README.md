@@ -3,7 +3,7 @@
 ---
 
 ## Project Structure
-
+```bash
 lib/
 │
 ├── core/ # Shared utilities, themes, widgets
@@ -19,6 +19,7 @@ lib/
 │ ├── models/ # Data models
 │ └── ui/ # the UI
 └── main.dart
+```
 
 ---
 
