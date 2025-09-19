@@ -4,18 +4,21 @@
 
 ## Project Structure
 
-```bash
 lib/
 │
-├── core/                # Shared utilities, themes, widgets
+├── core/ # Shared utilities, themes, widgets
 ├── features/
-│   ├── auth/            # Authentication (sign in, sign up, profile )
-│   ├── books/           # home , Book list, details , search
-│   ├── authors/         # Author list
-│   ├── vendors/         # Vendor list
-│   └──wishlist/        # Wishlist screen
+│ ├── auth/ # Authentication (sign in, sign up, profile )
+│ ├── books/ # Home, Book list, details, search
+│ ├── authors/ # Author list
+│ ├── vendors/ # Vendor list
+│ └── wishlist/ # Wishlist screen
+│ ├── repository/ # DB interactions
+│ ├── providers/ # Riverpod state management
+│ ├── controllers/ # AsyncNotifier handling
+│ ├── models/ # Data models
+│ └── ui/ # the UI
 └── main.dart
-```
 
 ---
 
